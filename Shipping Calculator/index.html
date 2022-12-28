@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title> Shipping Calculation Cost </title>
+		
+		<script type="text/javascript">
+			function calcCost() {
+				var product_cost = parseFloat(document.getElementById("product").value);
+				var quantity = parseInt(document.getElementById("qnty").value);
+				var place = parseFloat(document.getElementById("place").value);
+				var delivery = parseFloat(document.getElementById("delivery").value);
+				
+				var tot_cost = product_cost * quantity * place * delivery;				
+				document.getElementById("total").value = tot_cost;
+			}
+		</script>
+	</head>
+	<body>
+		<h1> Shipping Calculation Project </h1>
+		<h2 align='left'> Calculate your Order </h2>
+		<table>
+			<tr>
+				<td> Select Product: </td>
+				<td> 
+					<select id="product">
+						<option value='1'>  milk </option>
+						<option value='1.2'>  sugar </option>
+						<option value='2.5'>  cheese </option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td> Quantity: </td>
+				<td> <input type="number" id="qnty"/></td>
+			</tr>
+			<tr>
+				<td> Shipping State: </td>
+				<td> 
+					<select id="place">
+						<option value='1'>  Thessaloniki </option>
+						<option value='1.02'>  Athens </option>
+						<option value='1.5'>  Crete </option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td> Delivery Method: </td>
+				<td> 
+					<select id="delivery">
+						<option value='1'>  Regular </option>
+						<option value='1.2'>  Express </option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td> Your Total is: </td>
+				<td> <input type="text" id="total"/></td>
+			</tr>
+		</table>
+		<input type="button" value="Calculate Total Cost" onclick="calcCost();">
+	</body>
+</html>
